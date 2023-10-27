@@ -4,6 +4,7 @@ import {BrowserRouter} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';                                 // imports App component.
+import { UserProvider } from './Context/user.context';   // imports UserProvider to access user context.
 
 // imports styles
 import './index.scss';
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
       // App component is wrapped with BrowserRouter to access routes & UserProvider to access user context.
       <BrowserRouter>
+          <UserProvider>
               <App />
+          </UserProvider>
       </BrowserRouter>
 );
 
